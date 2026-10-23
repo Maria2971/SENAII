@@ -17,6 +17,7 @@ const btnWhiteRight = document.querySelector('#btn-white-right');
 const infoScreen = document.querySelector('#info-screen');
 const mainScreen = document.querySelector('#main-screen');
 const numberDisplay = document.querySelector('#number-display');
+
 key1.addEventListener('click', () => leituraTeclado('1'));
 key2.addEventListener('click', () => leituraTeclado('2'));
 key3.addEventListener('click', () => leituraTeclado('3'));
