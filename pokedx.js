@@ -65,7 +65,6 @@ async function consultarApi(msg)
         const data = await response.json();
         const urlImage = data.sprites.front_default;
         atualizarNum (data.id);
-        exibirDados (data);
         exibirSprite(urlImage);
         
     }
@@ -102,60 +101,6 @@ function atualizarNum (id)
     while(idString.length < 4) idString = '0' + idString;
     idString = '#' + idString;
     numberDisplay.textContent = idString;
-}
-
-function exibirDados (data)
-{
-  infoScreen.textContent = ' ';
-  const nome = document.createElement('p');
-  nome.textContent = capitalizar(data.name);
-  nome.style.fontSize = '1.5rem';
-  nome.style.fontWeight = 'bold';
-  const tipo = document.createElement('p');
-  tipo.textContent = 'Tipo: ' + capitalizar(data.types[0].type.name);
-
-  const pesoAltura = document.createElement('p');
-  //pesoAltura.textContent = 'Peso: ' + (data.weight / 2.205).toFixed(2) + 'kg';
-  const pessoaAltura 
-  const peso = 0;
-  let unidadePeso = '';
-  if (pesokg < 1)
-  {
-    peso = Math.round(data.weight / pesoKg * 1000);
-    unidadePeso = 'g';
-  }
-  else
-  {
-    peso = Math.round(pesoKg);
-    unidadePeso = 'kg';
-  }
-
-
-  const altura = 0;
-  let unidadeAltura = '';
-  if (altura < 1)
-  {
-    altura = Math.round(altuura * 100);
-    unidadeAltura = 'cm';
-  }
-  else
-  {
-    altura = altura.toFixed(2);
-    unidadeAltura = 'm';
-  }
-
-  
-  const espaco = document.createElement('span');
-  espaco.textContent = ' | ';
-  espaco.style.fontSize = '0.67rem';
-  const alturaInfo = document.createElement('p');
-  pesoAltura.textContent += ' | Altura: ' + altura + unidadeAltura;
-
-  const pessoAltura = document.createElement('p');
-  pessoAltura.appemd(pesoInfo, espaco, alturaInfo);
-
-  infoScreen.append(nome, tipo, pesoAltura);
-
 }
 
 function capitalizar(str)
